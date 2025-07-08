@@ -1,4 +1,5 @@
 import { useSession, signOut } from "next-auth/react";
+import Image from "next/image";
 
 export default function Home() {
   const { data: session } = useSession();
@@ -8,7 +9,7 @@ export default function Home() {
       {session ? (
         <>
           <p>안녕하세요, {session.user.nickname}님!</p>
-          <img
+          <Image
             src={session.user.image}
             alt="프로필"
             className="w-16 h-16 rounded-full"
